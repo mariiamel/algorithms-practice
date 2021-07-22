@@ -44,32 +44,32 @@ const recursive = (tree) => {
     let sum = 0;
     tree.forEach(node => {
         sum += node.v
-        if(!node.c){
-            return node.v
-        }
+        if(!node.c) return node.c;
         sum += recursive(node.c)
     })
-    return sum
+    return sum;
 }
 
 // console.log(recursive(tree))
 
 
 const iteration = (tree) => {
-    if(!tree.length){
-        return 0
-    }
+    if(!tree.length) return 0;
+    const stack = [];
     let sum = 0;
-    let stack = []
-    tree.forEach(node => stack.push(node))
+    tree.forEach(node => {
+        stack.push(node)
+    })
     while(stack.length){
         const node = stack.pop()
-        sum += node.v
+        sum += node.v;
         if(node.c){
-            node.c.forEach(child => stack.push(child))
+            node.c.forEach(n => {
+                stack.push(n)
+            })
         }
     }
-    return sum
+    return sum;
 }
 
 console.log(iteration(tree))
