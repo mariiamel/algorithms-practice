@@ -163,3 +163,13 @@
 
 // console.log(isPoli('mom'))
 // console.log(isPoli('hjvfytfv'))
+//-----------------------------------------------------------------------
+
+
+// var x = 10;
+
+// (function (){
+//     console.log(x)
+//     var x = 25;
+// }())
+// will be UNDEFINED
