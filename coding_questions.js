@@ -106,3 +106,60 @@
 
 // console.log(foo1()) //{ bar: 'hello'}
 // console.log(foo2()) // Undefined 
+//-----------------------------------------------------------------------
+
+
+// function f() {console.log(this.x)}
+// var obj = {x: 'smth'}
+// f.call(obj)
+//-----------------------------------------------------------------------
+
+
+
+// Should return { width: 10, height: 20}
+
+// var arr = [
+//     {name: 'width', value: 10},
+//     {name: 'height', value: 20}
+// ]
+
+// let result = {};
+
+// arr.forEach(el => {
+//     return result[el.name] = el.value;
+// })
+// console.log(result)
+//-----------------------------------------------------------------------
+
+
+// let arr = [1, 1, 2, 3, 4, 4, 5]
+
+//--1--
+//const uniqueArr = arr => [...new Set(arr)]
+
+// OR
+
+// --2--
+//var unique = arr.filter((el, i) =>{
+//     return arr.indexOf(el) == i
+// })
+// console.log(unique)
+//-----------------------------------------------------------------------
+
+
+
+// function isPoli(str){
+//     let first = 0
+//     let last = str.length - 1;
+//     while(first < last){
+//         if(str[first] !== str[last]){
+//             return false
+//         }
+//         first++;
+//         last--;
+//     }
+//     return true;
+// }
+
+// console.log(isPoli('mom'))
+// console.log(isPoli('hjvfytfv'))
