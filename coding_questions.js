@@ -124,7 +124,6 @@
 // ]
 
 // let result = {};
-
 // arr.forEach(el => {
 //     return result[el.name] = el.value;
 // })
@@ -147,25 +146,6 @@
 //-----------------------------------------------------------------------
 
 
-
-// function isPoli(str){
-//     let first = 0
-//     let last = str.length - 1;
-//     while(first < last){
-//         if(str[first] !== str[last]){
-//             return false
-//         }
-//         first++;
-//         last--;
-//     }
-//     return true;
-// }
-
-// console.log(isPoli('mom'))
-// console.log(isPoli('hjvfytfv'))
-//-----------------------------------------------------------------------
-
-
 // var x = 10;
 
 // (function (){
@@ -173,3 +153,53 @@
 //     var x = 25;
 // }())
 // will be UNDEFINED
+//-----------------------------------------------------------------------
+
+
+//calculate only positive and Odd int
+// function calculator(arr){
+//     let result = 0;
+//     for (let i = 0; i < arr.length; i++){
+//         if(arr[i] > 0 && arr[i] % 2 !== 0){
+//             result += arr[i];
+//         }
+//     }
+//     return result;
+// }
+
+// console.log(calculator([1, 3, 6, -2, 9, -6, 5]))
+//-----------------------------------------------------------------------
+
+
+// function duplicate(arr) {
+//     return arr.concat(arr);
+// }
+  
+// console.log(duplicate([1, 2, 3, 4, 5]))
+//-----------------------------------------------------------------------
+
+
+// -- FIZZBUZZ --
+// for (let i = 1; i <= 100; i++) {
+//     if(i % 15 === 0){
+//         console.log('FizzBuzz');
+//     }else if(i % 3 === 0){
+//         console.log('Fizz');
+//     } else if(i % 5 === 0 ){
+//         console.log('Buzz');
+//     } else {
+//         console.log(i);
+//     }
+// }
+//-----------------------------------------------------------------------
+
+// -- Recursion example
+// function recurFunct(n){
+//     if(n === 1){
+//         return 1;
+//     }
+//     return n + recurFunct(n - 1)
+// }
+
+// console.log(recurFunct(3))
+//-----------------------------------------------------------------------
