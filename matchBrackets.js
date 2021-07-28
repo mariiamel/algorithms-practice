@@ -23,4 +23,4 @@ function matchBrackets(str) {
     }
 }
 
-console.log(matchBrackets('()'))
+// console.log(matchBrackets('()'))
