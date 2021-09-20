@@ -23,7 +23,9 @@ var reorderLogFiles = function(logs) {
     for(let i = 0; i < logs.length; i++){
         //extract logs and save them to variable
         const log = logs[i].substring(logs[i].indexOf(' ') + 1, logs[i.length])
+        console.log(log, 'log')
         const isDigit = !isNaN(log[0]);
+        //check if the first part of log is a number
         if(isDigit){
             //if yes-- pussh to the digitLogs
             digitLogs.push(logs[i])
