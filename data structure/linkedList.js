@@ -1,38 +1,3 @@
-class LinkedList {
-    constructor(){
-        this.size = 0
-        this.root = null
-    }
-
-    add(value) {
-        if(this.size === 0){
-            this.root = new Node(value)
-            this.size +=1
-            return true
-        }
-        let node = this.root
-        while(node.next){
-            node = node.next
-        }
-        let newNode = new Node(value)
-        node.next = newNode
-        this.size += 1
-    }
-    getSize(){
-        return this.size
-    }
-    print(){
-        let result = []
-        let node = this.root
-        while(node){
-            result.push(node.value)
-            node = node.next
-        }
-        console.log(result);
-    }
-}
-
-
 class Node {
     constructor(value){
         this.value = value
@@ -40,8 +5,48 @@ class Node {
     }
 }
 
+class LinkedList {
+    constructor(value){
+        const newNode = new Node(value);
+        this.head = newNode;
+        this.tail = this.head;
+        this.length = 1;
+    }
+
+    push(value) {
+        const node = new Node(value);
+        if(this.head.next){
+            this.head.next = node;
+            this.tail = node;
+        } else {
+            this.tail.next = node;
+            this.tail = node;
+        }
+        this.length++;
+        return this;
+    }
+
+    pop(){
+        if(!this.head) return undefined;
+        let [pointer, popedNode] = [this.head, undefined];
+        while(pointer.next.next){
+            pointer = pointer.next;
+        }
+        this.tail = pointer;
+        poppedNode = pointer.next;
+        this.tail.next = null;
+        this.length--;
+        if(this.length === 0){
+            this.head = null;
+            this.tail = 0;
+        }
+        return poppedNode;
+    }
+}
+
+
 const list = new LinkedList()
-list.add(5)
-list.add(3)
-list.add(2)
-list.print()
+list.push(5)
+list.push(3)
+list.push(2)
+list.pop()

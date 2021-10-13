@@ -1,5 +1,5 @@
 const array = [1, 3, 5, 6, 2, 4, 8, 11, 23, 12, 56, -5, 34]
-let count = 0;
+// let count = 0;
 
 function selectionSort(array){
     for (let i = 0; i < array.length; i++){
@@ -8,7 +8,7 @@ function selectionSort(array){
             if(array[j] < array[indexMin]){
                 indexMin = j
             }
-            count += 1
+            // count += 1
         }
         let temp = array[i]
         array[i] = array[indexMin]
@@ -19,6 +19,6 @@ function selectionSort(array){
 }
 
 console.log(selectionSort(array))
-console.log(array.length)
-console.log(count)
+// console.log(array.length)
+// console.log(count)
 //O(n*n)

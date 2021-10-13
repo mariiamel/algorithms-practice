@@ -14,4 +14,4 @@ var removeDuplicates = function(nums) {
     return nums.length;
 };
 
-console.log(removeDuplicates([3]))
+console.log(removeDuplicates([3])) 
