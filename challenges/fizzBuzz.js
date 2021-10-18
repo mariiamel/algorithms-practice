@@ -20,7 +20,7 @@ var fizzBuzz = function(n) {
 console.log(fizzBuzz(3))// => ["1","2","Fizz"]
 
 
-//Classic
+//Classic way
 for (let i = 1; i <= 100; i++) {
     if(i % 15 === 0){
         console.log('FizzBuzz');

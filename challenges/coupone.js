@@ -32,3 +32,52 @@
     }
     return true;
 }
+
+//OR
+function isValid(str) {
+    if (str.length % 2 !== 0) {
+      return false;
+    }
+    if (str === "") {
+      return true;
+    }
+    const strArr = str.split("");
+    let i = 0;
+    let j = 1;
+    while (j < strArr.length) {
+      if (strArr[i] !== strArr[j]) {
+        i++;
+        j++;
+      } else {
+        strArr.splice(j, 1);
+        strArr.splice(i, 1);
+        i = 0;
+        j = 1;
+      }
+    }
+    console.log(strArr, i, j);
+    return strArr.length === 0 ? true : false;
+}
+
+//or
+function isValid(s, left=0, right=0){
+    //Emtpy str
+    if(left==right+1){
+        return true;
+    }
+    if(left>right) return false;
+
+    //Checking if even len str
+    if((right-left+1)%2!=0){
+        return false;
+    }
+    if(s.charAt(left) == s.charAt(right)){
+        rule1 = isValid(s,left+1,right-1);
+       if(rule1){
+           return true;
+       }
+    }
+       let mid = left + (right-left)/2;
+        rule2 = isValid(s,left+1,mid) && isValid(s,mid+1,right-1);
+       return rule2;
+}
