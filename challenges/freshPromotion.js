@@ -1,4 +1,13 @@
 
+// Input: codeList = [[apple, apple], [banana, anything, banana]] shoppingCart = [orange, apple, apple, banana, orange, banana]
+// Output: 1
+
+// OR 
+// Input: codeList = [[apple, apple], [banana, anything, banana]] shoppingCart = [banana, orange, banana, apple, apple]
+// Output: 0
+// Explanation: The customer is not a winner as the customer has added the fruits in order of groups 
+// but group [banana, orange, banana] is not following the group [apple, apple] in the codeList.
+
 function freshPromotion(codeList, shoppingCart) {
     const list = [...codeList[0], ...codeList[1]];
     const cart = [];
@@ -39,7 +48,8 @@ function freshPromotion(codeList, shoppingCart) {
     return count === listLength ? 1 : 0
 }
 
-freshPromotion()
+// freshPromotion([[apple, apple], [banana, anything, banana]], [orange, apple, apple, banana, orange, banana]) // => Output: 1
+
 
 //OR
 //Linear complexity O(N)
