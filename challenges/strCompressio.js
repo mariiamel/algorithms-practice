@@ -1,4 +1,3 @@
-let chars = ["a","a","b","b","c","c","c"]
 
 var compress = function(chars) {
     if(!chars.length) return 0;
@@ -18,4 +17,4 @@ var compress = function(chars) {
     return result;
 };
 
-console.log(compress(chars))
+console.log(compress(["a","a","b","b","c","c","c"]))

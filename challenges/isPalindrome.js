@@ -1,5 +1,4 @@
 
-
 function isPoli(str){
     let first = 0
     let last = str.length - 1;

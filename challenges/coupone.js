@@ -1,5 +1,5 @@
 
-//two pointers approach
+// two pointers approach
 // time complexity - O(n) because I am looping each character only once
 // space complexity - O(1) as only some variable is used to store some states: left pointer, right pointer and boolean
 
