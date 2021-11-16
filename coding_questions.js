@@ -8,26 +8,6 @@ console.log(foo, 'concatenation'); // will return NaN
 //-----------------------------------------------------------------------
 
 
-// Question: How would you make this work?
-
-// add(2, 5); // 7
-function add(first, second){
-    return first + second
-}
-// console.log(add(2, 5)); // 7
- 
-// AND
-
-// add(2)(5); // 7
-function add(first) {
-    return function(second){
-        return first + second
-    }
-}
-// console.log(add(2)(5)) // 7
-//-----------------------------------------------------------------------
-
-
 // let someString = "i'm a lasagna hog".split("").reverse().join("");
 // console.log(someString)
 //-----------------------------------------------------------------------
@@ -41,21 +21,21 @@ function add(first) {
 
 var foo = {n: 1};
 var bar = foo;
-foo.x = foo = {n: 2};)˜()
+// foo.x = foo = {n: 2};)˜()
 // console.log(bar, 'bar') // { n: 1, x: { n: 2 } }
 //-----------------------------------------------------------------------
 
 
 // Question: What does the following code print?
 
-// console.log('one');
-// setTimeout(function() {
-//   console.log('two');
-// }, 0);
-// Promise.resolve().then(function() {
-//   console.log('three');
-// })
-// console.log('four');
+console.log('one');
+setTimeout(function() {
+  console.log('two');
+}, 0);
+Promise.resolve().then(function() {
+  console.log('three');
+})
+console.log('four');
 
 // one, four , three, two 
 //All of timeout and promise is async func.. 
@@ -65,17 +45,17 @@ foo.x = foo = {n: 2};)˜()
 
 //Question: What is the difference between these four promises?
 
-// doSomething().then(function () {
-//     return doSomethingElse();
-//   });
+doSomething().then(function () {
+    return doSomethingElse();
+});
   
-//   doSomething().then(function () {
-//     doSomethingElse();
-//   });
+doSomething().then(function () {
+    doSomethingElse();
+});
   
-//   doSomething().then(doSomethingElse());
+doSomething().then(doSomethingElse());
   
-//   doSomething().then(doSomethingElse);
+doSomething().then(doSomethingElse);
 //-----------------------------------------------------------------------
 
 
@@ -180,14 +160,41 @@ function duplicate(arr) {
 
 // -- FIZZBUZZ --
 for (let i = 1; i <= 100; i++) {
-    if(i % 15 === 0){
+    if (i % 15 === 0) {
         console.log('FizzBuzz');
-    }else if(i % 3 === 0){
+    } else if (i % 3 === 0) {
         console.log('Fizz');
-    } else if(i % 5 === 0 ){
+    } else if (i % 5 === 0 ) {
         console.log('Buzz');
     } else {
         console.log(i);
     }
 }
 //-----------------------------------------------------------------------
+
+const add1 = (a, b) => a + b;
+
+const add2 = (a) => (b) => a + b;
+
+const addAllWays = (a, b) => {
+    if (b !== undefined) return a + b;
+    return (c) => a + c;
+}
+
+// console.log(add1(2, 5))
+// console.log(add2(2)(5))
+// console.log(addAllWays(2)(5))
+// console.log(addAllWays(2, 5))
+//-----------------------------------------------------------------------
+
+const fileExtension = (fileName) => {
+    if (typeof fileName !== 'string') {
+        throw new Error('Invalid type of parameter')
+    }
+    let parts = fileName.split('.');
+    return filename.length === 1 ? null : fileName[fileName.length - 1];
+} 
+
+// console.log(fileExtension("ref.fer.ted.ex")) // ex
+// console.log(fileExtension("ex")) // null
+
