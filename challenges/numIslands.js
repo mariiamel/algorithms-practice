@@ -1,9 +1,9 @@
 
 const numIslands = (grid) => {
     let islands = 0;
-    for(let row in grid){
-        for(let col in grid[row]){
-            if (grid[row][col] === '1'){
+    for (let row in grid) {
+        for (let col in grid[row]) {
+            if (grid[row][col] === '1') {
                 islands++;
                 // do not forget to turn row and col into integers
                 turnToWater(parseInt(row), parseInt(col), grid);

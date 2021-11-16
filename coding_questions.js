@@ -197,4 +197,19 @@ const fileExtension = (fileName) => {
 
 // console.log(fileExtension("ref.fer.ted.ex")) // ex
 // console.log(fileExtension("ex")) // null
+//-----------------------------------------------------------------------
 
+// Find the tree depth of html divs
+
+const appDiv = document.querySelector('#app');
+
+const treeDepth = (divEl, currLevel) => {
+    if (divEl.children.length === 0) return currLevel;
+    let maxDepth = currLevel;
+    Array.from(divEl.children).forEach((el) => {
+        maxDepth = Math.max(treeDepth(el, currLevel + 1), maxDepth)
+    })
+    return maxDepth;
+}
+
+// console.log(treeDepth(appDiv, 0));
