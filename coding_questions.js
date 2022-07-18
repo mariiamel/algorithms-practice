@@ -1,7 +1,11 @@
 console.log(0.1 + 0.2 == 0.3, 'first'); //returns false(because we didnt use Math.floor)
 console.log(0.1 + 0.2, '0.33333');
-//-----------------------------------------------------------------------
 
+console.log(5 < 6 < 7) // true -- 5 < 6 = true (true = 1) so 1 < 7 => true
+console.log(7 > 6 > 5) // false -- 7 > 6 = true (true = 1) sp 1 > 5 => false
+
+console.log(2 + '2') // 2 because of concantenat
+console.log(2 - '2') // 0 because of converting 2 nj number
 
 var foo = 10 + '20'; 
 console.log(foo, 'concatenation'); // will return NaN
@@ -112,16 +116,13 @@ arr.forEach(el => {
 
 let arr = [1, 1, 2, 3, 4, 4, 5]
 
-//--1--
 const uniqueArr = arr => [...new Set(arr)]
-
-// OR
-
-// --2--
+// // OR
 var unique = arr.filter((el, i) =>{
     return arr.indexOf(el) == i
 })
 // console.log(unique)
+
 //-----------------------------------------------------------------------
 
 
@@ -130,8 +131,7 @@ var x = 10;
 (function (){
     console.log(x)
     var x = 25;
-}())
-// will be UNDEFINED
+}()) // UNDEFINED
 //-----------------------------------------------------------------------
 
 
@@ -158,7 +158,7 @@ function duplicate(arr) {
 //-----------------------------------------------------------------------
 
 
-// -- FIZZBUZZ --
+// -- FIZZBUZZ -- 
 for (let i = 1; i <= 100; i++) {
     if (i % 15 === 0) {
         console.log('FizzBuzz');
@@ -192,10 +192,10 @@ const fileExtension = (fileName) => {
         throw new Error('Invalid type of parameter')
     }
     let parts = fileName.split('.');
-    return filename.length === 1 ? null : fileName[fileName.length - 1];
+    return parts.length === 1 ? null : parts[parts.length - 1];
 } 
 
-// console.log(fileExtension("ref.fer.ted.ex")) // ex
+console.log(fileExtension("ref.fer.ted.ex")) // ex
 // console.log(fileExtension("ex")) // null
 //-----------------------------------------------------------------------
 
@@ -213,3 +213,50 @@ const treeDepth = (divEl, currLevel) => {
 }
 
 // console.log(treeDepth(appDiv, 0));
+//-----------------------------------------------------------------------
+
+// Closure
+let inc = (function () {
+    let counter = 0;
+    return () => counter + 1;
+})()
+
+inc() // 1
+inc() // 2
+//-----------------------------------------------------------------------
+
+const fn = (val, sum) => console.log(val + sum);
+const newFn = fn.bind(null, 10);
+
+fn(12, 7) // 19
+newFn(7, 12) // 17
+//-----------------------------------------------------------------------
+
+let b = {};
+let c;
+b.b = 1;
+c = b;
+c.b = 2;
+// console.log(b.b); //2
+// console.log(c.b); //2
+//-----------------------------------------------------------------------
+
+let arr = [1, 2, 3, 4, 5];
+
+let res = arr.filter(el => {
+    return el % 2;
+})
+
+// console.log(res) // 1, 3, 5
+//-----------------------------------------------------------------------
+
+function fanc (a, b) {
+    console.log(a, b);
+}
+
+let fan2 = fanc.bind(null, 'foo');
+
+fan2('bar', 'baz'); //foo bar
+//-----------------------------------------------------------------------
+
+
