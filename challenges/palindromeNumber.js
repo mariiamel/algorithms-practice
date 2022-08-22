@@ -18,5 +18,6 @@ const palindromeNumber = (num) => {
     return true;
 }
 
+console.log(palindromeNumber(10)); // false
 console.log(palindromeNumber(121)); // true
 console.log(palindromeNumber(-121)); // false
